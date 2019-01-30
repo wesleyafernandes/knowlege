@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+table.blue-header thead tr {
+	background: #0072a7
+}
+
+table.blue-header thead tr th {
+	border-radius: 0 !important;
+	color: #fff
+}
+
+table.blue-header thead tr th i {
+	color: #fff
+}
