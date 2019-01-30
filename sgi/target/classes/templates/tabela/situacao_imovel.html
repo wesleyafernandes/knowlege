@@ -10,22 +10,56 @@
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet"
 	href="materialize/css/materialize.min.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="app.css"/>
 
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-	<h1>Lista de Situções</h1>
-	<h3>
-		<a class="waves-effect waves-light btn-large blue"
-			href="/cadastrarSituacaoImovel"><i class="material-icons left">add</i>Incluir Nova Situação</a>
-	</h3>
-	<div th:each="situacao : ${situacoes}">
-		<div class="row"></div>
-		<p>
-			<span th:text="${situacao.descricao}"></span>
-		</p>
-	</div>
+	<section class="logged">
+		<div class="container">
+			<div class="row">
+			    <div class="col sidebar l4 s12">
+				    <div class="row">
+				        <div class="info">
+				            <h5 class="left-align"><i class="material-icons left">settings</i>Dados Sistema</h5>
+				            <ul>
+				                <li><strong>1.252</strong> Usuários Cadastrados</li>
+				                <li><strong>289</strong> Usuários Pagantes</li>
+				                <li><strong>150</strong> Consultas Trabalhistas Salvas</li>
+				            </ul>
+				        </div>
+				    </div>
+				</div>
+	            <div class="col l1 s12"></div>
+	            <div class="col l7 s12">
+				<div class="row">
+					<h5 class="col l7 s12">Lista de Situações</h5>
+					<a class="waves-effect waves-light btn-large light-blue darken-3"
+						href="/cadastrarSituacaoImovel"><i class="material-icons left">add</i>Incluir Nova Situação</a>
+				</div>
+				<div class="row">
+			        <div>
+						<table class="highlight blue-header">
+							<thead>
+								<tr>
+									<th class="center-align">Situação</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="situacao : ${situacoes}">
+									<td class="center-align">
+										<span th:text="${situacao.descricao}"></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
 	<!--JavaScript at end of body for optimized loading-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
