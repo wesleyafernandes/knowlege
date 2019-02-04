@@ -1,0 +1,211 @@
+<!-- partial:partial/_head.html -->
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="/css/app.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    </head>
+ 
+    <body> 
+<!-- partial -->
+
+<!-- partial:partial/_admin-header.html -->
+
+    <ul id='login-list' class='dropdown-content'>
+        <li>
+            <a href="./pub_authentication.html">Sair</a>
+        </li>
+    </ul>
+    <header class="public">
+        <div class="container">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <a href="#" class="brand-logo">
+                        <img src="images/logo-menu.png" alt="ARKA">
+                    </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a href="./admin_dashboard.html">Painel Administativo</a>
+                        </li>
+                        <li>
+                            <a class='dropdown-trigger' href='#' data-target='login-list'> Olá, Fulano de Tal
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <ul class="sidenav" id="mobile-demo">
+            
+            <li>
+                <a href="./admin_dashboard.html">Painel Administrativo</a>
+            </li>
+            <li>
+                <a href="#"><strong>Olá, Fulano de Tal</strong></a>
+                <ul>
+                    <li>
+                        <a href="./pub_authentication.html">Sair</a>
+                    </li>
+                </ul>    
+            </li>
+        </ul>
+    </header>
+<!-- partial -->
+
+<section class="logged">
+    <div class="container">
+        <div class="row">
+            <!-- partial:partial/_admin-sidebar.html -->
+            <div class="col sidebar l4 s12">
+    <div class="row">
+        <div class="info">
+            <h5 class="left-align"><i class="material-icons left">settings</i>Dados Sistema</h5>
+            <ul>
+                <li><strong>1.252</strong> Usuários Cadastrados</li>
+                <li><strong>289</strong> Usuários Pagantes</li>
+                <li><strong>150</strong> Consultas Trabalhistas Salvas</li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <!-- partial -->
+            <div class="col l1 s12"></div>
+            <div class="col l7 s12">
+                <div class="row">
+                    <h4 class="col l7 s12">Lista de Veículos</h4>
+                    <button class="col l5 s12 btn blue waves-effect waves-light">
+                        <i class="material-icons left">add</i> Novo Veículo
+                    </button>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s8">
+                                <i class="material-icons prefix">search</i>
+                                <input type="text" name="search" id="search">
+                                <label for="search">Pesquise um veículo</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <table class="highlight blue-header">
+                        <thead>
+                            <tr>
+                                <th>Seção</th>
+                                <th>Marca</th>
+                                <th>Ano</th>
+                                <th>Placa</th>
+                                <th><i class="material-icons">delete</i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="veiculo : ${veiculos}">
+                                <td><span th:text="${veiculo.secao}"/></td>
+                                <td><span th:text="${veiculo.marcaModelo}"/></td>
+                                <td><span th:text="${veiculo.anoModelo}"/></td>
+                                <td><span th:text="${veiculo.placaOstentada}"/></td>
+                                <td><a href="#"><i class="material-icons">delete</i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- partial:partial/_admin-footer.html -->
+<footer class="public">
+    <div class="container">
+        <div class="row">
+            <div class="col l3 s12">
+                <div class="row">
+                    <img class="logo" src="images/logo-footer.png" alt="ARKA">
+                </div>
+                <div class="row">
+                    <h5>CONTATO</h5>
+                    <ul>
+                        <li>(61) 3333-3333</li>
+                        <li>contato@arkaonline.com.br</li>
+                        <li>QND 27 Lote 15 Sala 201</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col l4 s12">
+                <div class="row">
+                    <h5>NAVEGAÇÃO</h5>
+                    <ul>
+                        <li>
+                            <a href="./admin_dashboad.html">Painel Administrativo</a>
+                        </li>
+                        <li>
+                            <a href="./admin_plans.html">Preços</a>
+                        </li>
+                        <li>
+                            <a href="./admin_utility.html">Cartilha do Empregador</a>
+                        </li>
+                        <li>
+                            <a href="./admin_utility.html">Cartilha da Diarista</a>
+                        </li>
+                        <li>
+                            <a href="./admin_utility.html">Lei Complementar 150/2015</a>
+                        </li>
+                        <li>
+                            <a href="./pub_rpa.html">RPA Diarista</a>
+                        </li>
+                        <li>
+                            <a href="./pub_index.html#faq">Dúvidas Frequentes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col l5 s12">
+                <div class="row">
+                    <h5>SERVIÇOS ADMINISTRATIVOS</h5>
+                    <ul>
+                        <li>
+                            <a href="./admin_clients.html">Clientes Cadastrados</a>
+                        </li>
+                        <li>
+                            <a href="./admin_plans.html">Valores dos Planos</a>
+                        </li>
+                        <li>
+                            <a href="./admin_salaries.html">Cadastro de Salários Mínimos</a>
+                        </li>
+                        <li>
+                            <a href="./admin_support.html">Atendimento do Suporte</a>
+                        </li>
+                        <li>
+                            <a href="./admin_query.html">Atendimento Consultas Trabalhistas</a>
+                        </li>
+                        <li>
+                            <a href="./admin_knowledge.html">Base de Conhecimento</a>
+                        </li>
+                        <li>
+                            <a href="./admin_payment_report.html">Acompanhamento de Pagamentos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- partial -->
+<!-- partial:partial/_foot.html -->
+        <script type="text/javascript" src="/js/jquery-3.3.1-min.js"></script>
+        <script type="text/javascript" src="/js/materialize-min.js"></script>
+        <script type="text/javascript" src="/js/app-min.js"></script>
+    </body>
+</html>
+<!-- partial -->
